@@ -242,9 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.textContent = 'Отправка…';
     }
     const payload = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
+      name: form.elements.namedItem('name').value,
+      email: form.elements.namedItem('email').value,
+      message: form.elements.namedItem('message').value,
       ts: new Date().toISOString()
     };
 
