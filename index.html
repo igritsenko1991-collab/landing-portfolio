@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Моя первая страница — тренировка HTML и Git. Лендинг с контактной формой."/>
-  <title>Hello — Моя первая страница</title>
+  <meta name="description" content="Портфолио начинающего фронтенд-разработчика: HTML, CSS, JavaScript, учебные проекты и контактная форма."/>
+  <title>Игорь Гриценко — портфолио фронтенд-разработчика</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -15,17 +15,16 @@
     <div class="preloader-text">Загружается…</div>
   </div>
 </div>
-  <header class="site-header" role="banner">
-    <section class="container">
-      <h1 class="logo">My portfolio</h1>
+  <header class="site-header">
+    <div class="container">
+      <p class="logo">My portfolio</p>
 
       <!-- Семантический nav с кнопкой для мобильной навигации -->
-      <nav class="nav" role="navigation" aria-label="Главное меню">
+      <nav class="nav" aria-label="Главное меню">
         <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть главное меню">
-        <div class="line">+</div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="visually-hidden">Меню</div>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
         </button>
 
         <ul id="main-nav" class="nav-list">
@@ -34,7 +33,7 @@
           <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
-    </section>
+    </div>
   </header>
 
   <!-- About/ Обо мне-->
@@ -42,17 +41,22 @@
    <section class="hero container fade-in" id="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
       <div class="hero-text">
-       <h2 id="hero-title">ВСЕМ ПРИВЕТ!</h2>
+       <h1 id="hero-title">ВСЕМ ПРИВЕТ!</h1>
       </div>
     </div>
 </section>
 <section class="about container fade-in" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">Обо мне</h2>
+
       <div class="about-content">
         <div class="about-text">
           <p>Меня зовут Игорь. И я учусь на фронтенд-разработчика, изучаю HTML, CSS и JavaScript и собираю проекты для своего портфолио на GitHub. Люблю продумывать интерфейсы и делать их доступными.</p>
-          <ul class="skills">Скилы:
+
+          <!--Список навыков -->
+          <h3>Навыки</h3>
+          <ul class="skills">
             <li>HTML5</li>
-            <li>CSS3</li>
+            <li>CSS</li>
             <li>JavaScript</li>
           </ul>
         </div>
@@ -68,17 +72,17 @@
     <section class="works container fade-in" id="works" aria-labelledby="works-title">
     <h2 id="works-title">Мои проекты</h2>
 
-  <p class="works-intro">Ниже — отобранные мини-проекты и упражнения. Каждый проект содержит ссылку на demo и репозиторий.</p>
+  <p class="works-intro">Ниже — мои учебные проекты. Часть из них ещё в разработке.</p>
 
-  <div class="projects-grid" role="list">
+  <div class="projects-grid">
 
     <!-- Card 1 -->
-    <article class="proj-card fade-in delay-1" role="listitem">
+    <article class="proj-card fade-in delay-1">
       <a class="proj-media" href="https://igritsenko1991-collab.github.io/Day1-hello/" target="_blank" rel="noopener noreferrer">
         <img src="images/works/project1.jpg" alt="Превью проекта Лендинг — адаптивный" loading="lazy" width="1200" height="800" />
       </a>
       <div class="proj-body">
-        <h4 class="proj-title">Лендинг</h4>
+        <h3 class="proj-title">Лендинг</h3>
         <p class="proj-desc">Простой адаптивный лендинг с бургер-меню и контактной формой.</p>
         <div class="proj-tags">
           <span>HTML</span>
@@ -92,34 +96,28 @@
     </article>
 
     <!-- Card 2 -->
-    <article class="proj-card fade-in delay-2" role="listitem">
-      <a class="proj-media" href="#" target="_blank" rel="noopener noreferrer">
+    <article class="proj-card fade-in delay-2">
+      <div class="proj-media">
         <img src="images/works/project2.jpg" alt="Превью проекта ToDo App" loading="lazy" width="1200" height="800"/>
-      </a>
+      </div>
       <div class="proj-body">
-        <h4 class="proj-title">ToDo list</h4>
+        <h3 class="proj-title">ToDo list</h3>
         <p class="proj-desc">Мини-приложение для задач с localStorage (в планах — API).</p>
         <div class="proj-tags"><span>JS</span><span>localStorage</span></div>
-        <div class="proj-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">Demo</a>
-          <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
-        </div>
+        <p class="proj-desc"> Ссылки на демо и код появятся позже.</p>
       </div>
     </article>
 
     <!-- Card 3 -->
-    <article class="proj-card fade-in delay-3" role="listitem">
-      <a class="proj-media" href="#" target="_blank" rel="noopener noreferrer">
-        <img src="images/works/project3.jpg" alt="Превью проекта Мини-блог" loading="lazy" width="1200" height="800"/>
-      </a>
+    <article class="proj-card fade-in delay-3">
+      <div class="proj-media">
+        <img src="images/works/project3.jpg" alt="Превью проекта: сайт погоды" loading="lazy" width="1200" height="800"/>
+      </div>
       <div class="proj-body">
-        <h4 class="proj-title">Веб-сайт погоды</h4>
+        <h3 class="proj-title">Веб-сайт погоды</h3>
         <p class="proj-desc">Веб-сайт прогноза погоды</p>
         <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
-        <div class="proj-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">Demo</a>
-          <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
-        </div>
+        <p class="proj-desc">Ссылки на демо и код появятся позже.</p>
       </div>
     </article>
   </div>
@@ -145,9 +143,9 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> — <a href="https://igritsenko1991-collab.github.io/Day1-hello/" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <p>© <span id="year"></span> — <a href="https://github.com/igritsenko1991-collab" target="_blank" rel="noopener noreferrer">Мой GitHub</a></p>
     </div>
   </footer>
      <button type="button" class="back-to-top" aria-label="Вернуться наверх" style="display: none;">↑</button>
