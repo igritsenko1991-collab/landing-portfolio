@@ -652,12 +652,20 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* Responsive tweaks */
 @media (max-width: 900px) {
-  .projects-grid { gap: 16px; }
-}
-@media (max-width: 768px) {
-  .projects-grid { gap: 12px; grid-template-columns: 1fr 1fr; }
+  .projects-grid {
+    gap: 16px;
   }
-  .proj-media { aspect-ratio: 3 / 2; }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    gap: 12px;
+  }
+  .proj-media {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 
 
 /* ========== ПРЕЛОАДЕР ========== */
