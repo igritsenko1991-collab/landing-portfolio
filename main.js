@@ -1,4 +1,5 @@
 /* Прелодер */
+
 (function initPreloader() {
   const preloader = document.getElementById('preloader');
   const main = document.querySelector('main');
@@ -6,24 +7,29 @@
   if (!preloader || !main) return;
 
   // Скрываем контент до загрузки
+
   main.classList.add('page-hidden');
 
-  window.addEventListener('load', () => {
-    // Hide preloader плавно
+  const finishLoading = () => {
     preloader.classList.add('hidden');
+
     setTimeout(() => {
       main.classList.remove('page-hidden');
       main.classList.add('page-ready');
       preloader.remove();
     }, 450);
-  });
+  };
 
   if (document.readyState === 'complete') {
-    window.dispatchEvent(new Event('load'));
+    finishLoading();
+  } else {
+    window.addEventListener('load', finishLoading, { once: true});
   }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.add('js-enabled');
+
   // Бургер меню и навигация
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');

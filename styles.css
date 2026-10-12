@@ -426,14 +426,14 @@ button:hover {
 }
 
 /* Появление при скролле: fade-in / slide-up */
-.fade-in {
+.js-enabled .fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.7s ease;
   will-change: opacity, transform;
 }
 
-.fade-in.visible {
+.js-enabled .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -710,7 +710,6 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 .page-ready {
-  padding: 20px;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease;
