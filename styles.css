@@ -1,7 +1,6 @@
 /* ========== CSS-переменные (цвета, шрифты) ========== */
 :root{
-  background: white;
-  --bg: #f7f7f8;
+  --bg: #f5f7fa;
   --surface: #ffffff;
   --muted: #5f6368;
   --text: #111217;
@@ -75,10 +74,19 @@ html, body {
 body {
   margin: 0;
   font-family: var(--base-font);
-  background: var(--bg);
+  background: 
+        linear-gradient(
+        180deg,
+        #FFF8F1 0%,
+        #FFFAF6 35%,
+        #FFFCFA 70%,
+        #FFFFFF 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #FFFFFF;
   color: var(--text);
   line-height: 1.45;
-  background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -127,7 +135,7 @@ ul { padding-left: 1.15rem; margin: 0 0 12px 0; }
 
 /* ========== Header / Навигация ========== */
 .site-header {
-  background: rgb(255, 255, 255);
+  background: rgba(255, 250, 246, 0.82);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -252,14 +260,45 @@ button {
   border-radius: 8px;
   cursor: pointer;
   background: var(--accent);
-  color: black;
-  transition: background .15s ease, transform .1s ease;
+  color: #ffffff;
+  transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
 /* Анимация кнопки */
 button:hover {
   background: #a5a5a5;
   transform: translateX(1px);
+}
+
+
+/* Кнопка отправки формы */
+#contact-submit {
+  background-color: #FFF1E6;
+  color: #594438;
+  border: 1px solid #E8D8C9;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(89, 68, 56, 0.12);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Наведение на кнопку отправки */
+#contact-submit:hover {
+  background-color: #EAD8C7;
+  color: #3F2E25;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(89, 68, 56, 0.18);
+}
+
+/* Фокус кнопки при навигации с клавиатуры */
+#contact-submit:focus-visible {
+  outline: 3px solid #C9A98F;
+  outline-offset: 3px;
 }
 
 /* ========== Футер ========== */
@@ -269,8 +308,6 @@ button:hover {
   font-size: 16px;
   padding: 20px 0 40px 0;
 }
-
-  /* Дополнительно для мобильной версии */
 
 /* Дополнительно для мобильной версии */
 @media (max-width: 767px) {
@@ -486,7 +523,7 @@ button:hover {
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 8px;
-  transition: background .12s ease;
+  transition: backgroun-color 0.12s ease;
 }
 .proj-links a:hover { background: rgba(31,111,235,0.06); }
 
@@ -497,17 +534,24 @@ button:hover {
   right: 30px;
   width: 50px;
   height: 50px;
-  border: none;
+  padding: 0;
+  border: 1px solid #e8d8c9;
   border-radius: 50%;
-  background:#165ecb;
-  color: rgb(0, 0, 0);
+  background-color:#fff1e6;
+  color: #594438;
   font-size: 25px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(89, 68, 56, 0.12);
 }
 
 .back-to-top.show {
@@ -516,8 +560,10 @@ button:hover {
 }
 /* Ховер кнопки "Наверх */
 .back-to-top:hover {
-  background: #686868;
-  transform: translateY(-2px);
+  background-color: #ead8c7;
+  color: #3f2e25;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(89, 68, 56, 0.18);
 }
 
 .field-error {
@@ -662,7 +708,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   text-decoration: none;
   padding: 6px 8px;
   border-radius: 8px;
-  transition: background .12s ease, transform .08s ease;
+  transition: background-color 0.12s ease, transform 0.08s ease;
 }
 .proj-links a:hover { background: rgba(31,111,235,0.06); transform: translateY(-2px); }
 
